@@ -16,6 +16,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     document.getElementById('profilePreview').src = wallname.profile.startsWith('/textures/')
                         ? `${githubBaseURL}${wallname.profile.split('/').pop()}`
                         : wallname.profile;
+                    // Add crossorigin attribute
+                    document.getElementById('profilePreview').setAttribute('crossorigin', 'anonymous');
                 }
             }
 
@@ -40,21 +42,29 @@ document.addEventListener('DOMContentLoaded', () => {
                     document.getElementById('project1Preview').src = projects.project1Image.startsWith('/textures/')
                         ? `${githubBaseURL}${projects.project1Image.split('/').pop()}`
                         : projects.project1Image;
+                    // Add crossorigin attribute
+                    document.getElementById('project1Preview').setAttribute('crossorigin', 'anonymous');
                 }
                 if (projects.project2Image) {
                     document.getElementById('project2Preview').src = projects.project2Image.startsWith('/textures/')
                         ? `${githubBaseURL}${projects.project2Image.split('/').pop()}`
                         : projects.project2Image;
+                    // Add crossorigin attribute
+                    document.getElementById('project2Preview').setAttribute('crossorigin', 'anonymous');
                 }
                 if (projects.project3Image) {
                     document.getElementById('project3Preview').src = projects.project3Image.startsWith('/textures/')
                         ? `${githubBaseURL}${projects.project3Image.split('/').pop()}`
                         : projects.project3Image;
+                    // Add crossorigin attribute
+                    document.getElementById('project3Preview').setAttribute('crossorigin', 'anonymous');
                 }
                 if (projects.project4Image) {
                     document.getElementById('project4Preview').src = projects.project4Image.startsWith('/textures/')
                         ? `${githubBaseURL}${projects.project4Image.split('/').pop()}`
                         : projects.project4Image;
+                    // Add crossorigin attribute
+                    document.getElementById('project4Preview').setAttribute('crossorigin', 'anonymous');
                 }
             }
         })
