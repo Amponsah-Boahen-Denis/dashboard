@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (wallname.profile) {
                     document.getElementById('profilePreview').src = wallname.profile.startsWith('/textures/')
                         ? `${githubBaseURL}${wallname.profile.split('/').pop()}`
-                        : `https://back-api-mu.vercel.app${wallname.profile}`;
+                        : wallname.profile;
                 }
             }
 
@@ -39,22 +39,22 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (projects.project1Image) {
                     document.getElementById('project1Preview').src = projects.project1Image.startsWith('/textures/')
                         ? `${githubBaseURL}${projects.project1Image.split('/').pop()}`
-                        : `https://back-api-mu.vercel.app${projects.project1Image}`;
+                        : projects.project1Image;
                 }
                 if (projects.project2Image) {
                     document.getElementById('project2Preview').src = projects.project2Image.startsWith('/textures/')
                         ? `${githubBaseURL}${projects.project2Image.split('/').pop()}`
-                        : `https://back-api-mu.vercel.app${projects.project2Image}`;
+                        : projects.project2Image;
                 }
                 if (projects.project3Image) {
                     document.getElementById('project3Preview').src = projects.project3Image.startsWith('/textures/')
                         ? `${githubBaseURL}${projects.project3Image.split('/').pop()}`
-                        : `https://back-api-mu.vercel.app${projects.project3Image}`;
+                        : projects.project3Image;
                 }
                 if (projects.project4Image) {
                     document.getElementById('project4Preview').src = projects.project4Image.startsWith('/textures/')
                         ? `${githubBaseURL}${projects.project4Image.split('/').pop()}`
-                        : `https://back-api-mu.vercel.app${projects.project4Image}`;
+                        : projects.project4Image;
                 }
             }
         })
