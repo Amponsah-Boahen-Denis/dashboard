@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     // Fetch data from the server
-    fetch('https://back-api-mu.vercel.app/api/data')
+    fetch('https://back-api-mu.vercel.app/api/data1')
         .then(response => response.json())
         .then(data => {
             const { wallname, contact, projects } = data;
