@@ -1,4 +1,3 @@
-
 document.addEventListener('DOMContentLoaded', () => {
     // Fetch data from the server
     fetch('https://back-api-mu.vercel.app/api/data1')
@@ -7,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const { wallname, contact, projects } = data;
 
             // Base URL for images stored in imgbb
-            const imgbbBaseURL = 'https://denis12.imgbb.com/'; // Update with your imgbb base URL
+            const imgbbBaseURL = 'https://denis12.imgbb.com/'; // Ensure this is correct
 
             // Update global variables with wallname data
             if (wallname) {
@@ -15,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 document.getElementById('about').value = wallname.about || '';
                 if (wallname.profile) {
                     const profilePreview = document.getElementById('profilePreview');
-                    profilePreview.src = wallname.profile.startsWith('http') ? wallname.profile : `${imgbbBaseURL}${wallname.profile}`; // Use the URL from the database or construct it
+                    profilePreview.src = wallname.profile.startsWith('http') ? wallname.profile : `${imgbbBaseURL}${wallname.profile}`; // Construct URL if needed
                     profilePreview.crossOrigin = 'anonymous'; // Set crossOrigin attribute
                 }
             }
@@ -41,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const setImageSrc = (elementId, imagePath) => {
                     if (imagePath) {
                         const imgElement = document.getElementById(elementId);
-                        imgElement.src = imagePath.startsWith('http') ? imagePath : `${imgbbBaseURL}${imagePath}`; // Use the URL from the database or construct it
+                        imgElement.src = imagePath.startsWith('http') ? imagePath : `${imgbbBaseURL}${imagePath}`; // Construct URL if needed
                         imgElement.crossOrigin = 'anonymous'; // Set crossOrigin attribute
                     }
                 };
