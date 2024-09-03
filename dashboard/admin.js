@@ -1,9 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Fetch data from the server
-    fetch('https://back-api-mu.vercel.app/api/data1')
-        .then(response => response.json())
-        .then(data => {
-            const { wallname, contact, projects } = data;
+    // Fetch data from the server using axios
+    axios.get('https://back-api-mu.vercel.app/api/data1')
+        .then(response => {
+            const { wallname, contact, projects } = response.data;
 
             // Base URL for images stored on imgbb
             const imgbbBaseURL = 'https://denis12.imgbb.com/'; // Ensure this URL is correct and accessible
@@ -55,6 +54,67 @@ document.addEventListener('DOMContentLoaded', () => {
             console.error('Error fetching data:', error);
         });
 });
+
+
+
+
+// document.addEventListener('DOMContentLoaded', () => {
+//     // Fetch data from the server
+//     fetch('https://back-api-mu.vercel.app/api/data1')
+//         .then(response => response.json())
+//         .then(data => {
+//             const { wallname, contact, projects } = data;
+
+//             // Base URL for images stored on imgbb
+//             const imgbbBaseURL = 'https://denis12.imgbb.com/'; // Ensure this URL is correct and accessible
+
+//             // Update global variables with wallname data
+//             if (wallname) {
+//                 document.getElementById('name').value = wallname.name || '';
+//                 document.getElementById('about').value = wallname.about || '';
+//                 if (wallname.profile) {
+//                     const profilePreview = document.getElementById('profilePreview');
+//                     profilePreview.src = wallname.profile.startsWith('http') ? wallname.profile : `${imgbbBaseURL}${wallname.profile}`; // Use the URL from the database or construct it
+//                     profilePreview.crossOrigin = 'anonymous'; // Set crossOrigin attribute
+//                 }
+//             }
+
+//             // Populate Contact fields
+//             if (contact) {
+//                 document.getElementById('email').value = contact.email || '';
+//                 document.getElementById('facebook').value = contact.facebook || '';
+//                 document.getElementById('tiktok').value = contact.tiktok || '';
+//                 document.getElementById('linkedin').value = contact.linkedin || '';
+//                 document.getElementById('instagram').value = contact.instagram || '';
+//                 document.getElementById('youtube').value = contact.youtube || '';
+//             }
+
+//             // Populate Projects fields
+//             if (projects) {
+//                 document.getElementById('link1').value = projects.link1 || '';
+//                 document.getElementById('link2').value = projects.link2 || '';
+//                 document.getElementById('link3').value = projects.link3 || '';
+//                 document.getElementById('link4').value = projects.link4 || '';
+
+//                 // Helper function to set image source and crossOrigin attribute
+//                 const setImageSrc = (elementId, imagePath) => {
+//                     if (imagePath) {
+//                         const imgElement = document.getElementById(elementId);
+//                         imgElement.src = imagePath.startsWith('http') ? imagePath : `${imgbbBaseURL}${imagePath}`; // Use the URL from the database or construct it
+//                         imgElement.crossOrigin = 'anonymous'; // Set crossOrigin attribute
+//                     }
+//                 };
+
+//                 setImageSrc('project1Preview', projects.project1Image);
+//                 setImageSrc('project2Preview', projects.project2Image);
+//                 setImageSrc('project3Preview', projects.project3Image);
+//                 setImageSrc('project4Preview', projects.project4Image);
+//             }
+//         })
+//         .catch(error => {
+//             console.error('Error fetching data:', error);
+//         });
+// });
 
 
 
