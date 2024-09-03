@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     // Fetch data from the server using axios
-    axios.get('https://back-api-mu.vercel.app/api/data1')
+    fetch.get('https://back-api-mu.vercel.app/api/data1')
         .then(response => {
             const { wallname, contact, projects } = response.data;
 
